@@ -3079,7 +3079,7 @@
       helpers.each(this.segments,function(segment){
         segment.save();
       });
-
+      
       this.reflow();
       this.render();
     },
@@ -3469,5 +3469,9 @@
     }
 
   });
+
+
+
+
 
 }).call(this);
