@@ -70,10 +70,9 @@ rightEL.addEventListener("click", function() {
 var getVoteData = function() {
   var data = [];
   labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
-  datasets: [{
   for(var i = 0; i < images.length; i++) {
-  data.push({ value: images[i].vote, label:images[i].label, fillColor: images[i].fillColor, strokeColor: images[i].strokeColor, highlightFill: images[i].highlightFill, highlightStroke: images[i].highlightStroke})
-    }]
+  data.push[{label:images[i].label, fillColor: images[i].fillColor, strokeColor: images[i].strokeColor, highlightFill: images[i].highlightFill, highlightStroke: images[i].highlightStroke}];
+  data: [images[i].vote];
   }
 }
 
@@ -84,8 +83,8 @@ var barChart = new Chart(barChart).Bar(getVoteData);
 
 
 
-/*ar data = {
-    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+/*var data = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
         {
             label: "My First dataset",
@@ -93,7 +92,18 @@ var barChart = new Chart(barChart).Bar(getVoteData);
             strokeColor: "rgba(220,220,220,0.8)",
             highlightFill: "rgba(220,220,220,0.75)",
             highlightStroke: "rgba(220,220,220,1)",
-            data: [65, 59, 80, 81, 56, 55, 40]*/
+            data: [65, 59, 80, 81, 56, 55, 40]
+        },
+        {
+            label: "My Second dataset",
+            fillColor: "rgba(151,187,205,0.5)",
+            strokeColor: "rgba(151,187,205,0.8)",
+            highlightFill: "rgba(151,187,205,0.75)",
+            highlightStroke: "rgba(151,187,205,1)",
+            data: [28, 48, 40, 19, 86, 27, 90]
+        }
+    ]
+};*/
 
 
 
