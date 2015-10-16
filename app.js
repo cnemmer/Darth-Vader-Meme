@@ -72,7 +72,7 @@ var getVoteData = function() {
   labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
   for(var i = 0; i < images.length; i++) {
   data.push[{label:images[i].label, fillColor: images[i].fillColor, strokeColor: images[i].strokeColor, highlightFill: images[i].highlightFill, highlightStroke: images[i].highlightStroke}];
-  data: [images[i].vote];
+  data.push[{data: images[i].vote}];
   }
 }
 
