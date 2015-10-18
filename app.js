@@ -54,7 +54,7 @@ leftEL.addEventListener("click", function() {
   images[img1].vote;
   imagesCreater();
   getVoteData();
-  barChart.update();
+  createLocal();
 });
 
 //this is where I need to incrememt votes to the right
@@ -64,7 +64,8 @@ rightEL.addEventListener("click", function() {
   images[img2].vote;
   imagesCreater();
   getVoteData();
-  barChart.update();
+  console.log(data.datasets[0].data);
+  createLocal();
 });
 //function to populate my chart.
 var getVoteData = function() {
@@ -86,16 +87,20 @@ var getVoteData = function() {
     data.datasets[0].data.push(images[i].vote);
   }
   barChart = new Chart(context).Bar(data, {
-  scaleBeginAtZero : true,
-  scaleGridLineWidth : 1,
-  barShowStroke : true,
-  barStrokeWidth : 2
+    scaleBeginAtZero : true,
+    scaleGridLineWidth : 1,
+    barShowStroke : true,
+    barStrokeWidth : 2
   });
 }
 
-getVoteData(); 
+function createLocal() {
+  var dataStore = JSON.stringify(data.datasets[0].data);
+  localStorage.setItem('voteData', dataStore);
+}
 
-
-
-
-
+getVoteData();
+if (localStorage.voteData) {
+  data.datasets[0].data = JSON.parse(localStorage.voteData);
+}
+new Chart(context).Bar(data);
